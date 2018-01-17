@@ -1,0 +1,24 @@
+  - platform: mqtt
+    name: "Right Garage Door"
+    device_class: garage
+    command_topic: "home/garage/door-right/set"
+    state_topic: "home/garage/door-right"
+    retain: true
+    payload_open: "OPEN"
+    payload_close: "CLOSE"
+    payload_stop: "STOP"
+    state_open: "open"
+    state_closed: "closed"
+
+  - platform: mqtt
+    name: "Left Garage Door"
+    device_class: garage
+    command_topic: "home/garage/door-left/set"
+    state_topic: "home/garage/door-left"
+    retain: true
+    payload_open: "OPEN"
+    payload_close: "CLOSE"
+    payload_stop: "STOP"
+    state_open: "open"
+    state_closed: "closed"
+
