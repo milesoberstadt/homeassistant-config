@@ -1,0 +1,133 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 274
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/Chicago
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+updater:
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+# Weather Prediction
+sensor:
+  - platform: yr
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+# Text to speech
+tts:
+  platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+
+# Track devices!
+device_tracker:
+  - platform: ddwrt
+    host: !secret router_host
+    username: !secret router_user
+    password: !secret router_pass
+
+# Enable built in mqtt broker
+mqtt:
+    port: 1883
+    username: !secret mqtt_user
+    password: !secret mqtt_pass
+
+# Garage config
+cover:
+  - platform: mqtt
+    name: "Right Garage Door"
+    device_class: garage
+    command_topic: "home/garage/door-right/set"
+    state_topic: "home/garage/door-right"
+    retain: true
+    payload_open: "OPEN"
+    payload_close: "CLOSE"
+    payload_stop: "STOP"
+    state_open: "open"
+    state_closed: "closed"
+
+  - platform: mqtt
+    name: "Left Garage Door"
+    device_class: garage
+    command_topic: "home/garage/door-left/set"
+    state_topic: "home/garage/door-left"
+    retain: true
+    payload_open: "OPEN"
+    payload_close: "CLOSE"
+    payload_stop: "STOP"
+    state_open: "open"
+    state_closed: "closed"
+
+# Motion sensor in kitchen
+sensor:
+  - platform: mqtt
+    name: "Kitchen Motion Sensor"
+    state_topic: "home/kitchen/motion-sensor"
+
+# Sunrise simulator LED strip
+light:
+  - platform: mqtt
+    name: "Bedroom LED Strip"
+    command_topic: "home/bedroom/led-strip/set"
+    state_topic: "home/bedroom/led-strip"
+    brightness_state_topic: "home/bedroom/led-strip/brightness"
+    brightness_command_topic: "home/bedroom/led-strip/brightness/set"
+    rgb_state_topic: "home/bedroom/led-strip/rgb"
+    rgb_command_topic: "home/bedroom/led-strip/rgb/set"
+    state_value_template: "{{ value_json.state }}"
+    payload_on: "ON"
+    payload_off: "OFF"
+
+  - platform: mqtt
+    name: "Kitchen LED Strip"
+    command_topic: "home/kitchen/counter-led-strip/set"
+    state_topic: "home/kitchen/counter-led-strip"
+    state_value_template: "{{ value_json.state }}"
+    payload_on: "ON"
+    payload_off: "OFF"
+
+
+ifttt:
+  key: !secret ifttt_key
+
