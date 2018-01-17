@@ -44,7 +44,6 @@ logbook:
 # Track the sun
 sun:
 
-# Weather Prediction
 sensor:
   - platform: yr
   - platform: speedtest
@@ -52,6 +51,13 @@ sensor:
       - ping
       - download
       - upload
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    monitored_conditions:
+      - summary
+      - icon
+    update_inverval:
+      minutes: 30
 
 # Text to speech
 tts:
