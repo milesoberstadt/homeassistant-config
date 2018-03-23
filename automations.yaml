@@ -1,1 +1,11 @@
-[]
+- action:
+  - service: cover.close_cover
+    entity_id: cover.right_garage_door
+  alias: Close right garage door after being left open
+  id: '1520196242326'
+  trigger:
+  - entity_id: cover.right_garage_door
+    platform: state
+    to: "open"
+    for:
+      minutes: 15

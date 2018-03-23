@@ -2,6 +2,7 @@ default_view:
     view: yes
     entities:
         - group.family
+        - group.kitchen
         - group.bedroom
         - group.garage
 
