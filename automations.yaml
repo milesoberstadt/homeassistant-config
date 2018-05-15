@@ -6,6 +6,39 @@
   trigger:
   - entity_id: cover.right_garage_door
     platform: state
-    to: "open"
+    to: open
     for:
       minutes: 15
+- action:
+  - service: cover.close_cover
+    entity_id: cover.left_garage_door
+  alias: Close left garage door after being left open
+  id: '1520196242369'
+  trigger:
+  - entity_id: cover.left_garage_door
+    platform: state
+    to: open
+    for:
+      minutes: 15
+- action:
+  - service: light.turn_on
+    entity_id: light.kitchen_led_strip
+  alias: Turn on the kitchen LED strip when there's motion
+  condition: []
+  id: '1521847317798'
+  trigger:
+  - entity_id: sensor.kitchen_motion_sensor
+    platform: state
+    to: 'true'
+- action:
+  - service: light.turn_off
+    entity_id: light.kitchen_led_strip
+  alias: Turn off the kitchen LED strip when there's no motion
+  condition: []
+  id: '1521847692368'
+  trigger:
+  - entity_id: sensor.kitchen_motion_sensor
+    platform: state
+    to: 'false'
+    for:
+      minutes: 10
