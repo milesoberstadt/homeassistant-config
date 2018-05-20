@@ -42,3 +42,17 @@
     to: 'false'
     for:
       minutes: 10
+- id: '1526831761649'
+  alias: Notify IFTTT - AC Water Full
+  trigger:
+  - entity_id: binary_sensor.basement_water_sensor
+    for:
+      minutes: 2
+    from: 'Off'
+    platform: state
+    to: 'On'
+  condition: []
+  action:
+  - data:
+      event: ac_water_full
+    service: ifttt.trigger
