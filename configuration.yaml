@@ -10,6 +10,8 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Chicago
+  # Customization file
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 #introduction:
@@ -58,13 +60,20 @@ sensor:
       - icon
     update_inverval:
       minutes: 30
+  - platform: mqtt
+    name: "Kitchen Motion Sensor"
+    state_topic: "home/kitchen/motion-sensor"
 
 # Text to speech
 tts:
-  platform: google
+  - platform: google
+
+# Cloud
+cloud:
 
 group: !include groups.yaml
 automation: !include automations.yaml
+script: !include scripts.yaml
 
 # Track devices!
 device_tracker:
@@ -82,14 +91,7 @@ mqtt:
 # Garage config
 cover: !include ./configuration/cover.yaml
 
-# Motion sensor in kitchen
-sensor:
-  - platform: mqtt
-    name: "Kitchen Motion Sensor"
-    state_topic: "home/kitchen/motion-sensor"
-
 light: !include ./configuration/light.yaml
 
 ifttt:
   key: !secret ifttt_key
-
