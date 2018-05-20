@@ -5,6 +5,7 @@ default_view:
         - group.kitchen
         - group.bedroom
         - group.garage
+        - group.sensors
 
 Info:
     view: yes
@@ -37,3 +38,6 @@ Bedroom:
 Garage:
   - cover.left_garage_door
   - cover.right_garage_door
+
+Sensors:
+  - binary_sensor.basement_water_sensor

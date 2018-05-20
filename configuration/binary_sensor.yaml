@@ -1,0 +1,7 @@
+# REMINDER: HA uses BCM pin numbering
+- platform: rpi_gpio
+  ports:
+    4: Basement Water Sensor
+  pull_mode: DOWN
+  bouncetime: 500
+  invert_logic: False

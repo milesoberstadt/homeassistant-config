@@ -93,5 +93,8 @@ cover: !include ./configuration/cover.yaml
 
 light: !include ./configuration/light.yaml
 
+# Pi Host GPIO Sensors
+binary_sensor: !include ./configuration/binary_sensor.yaml
+
 ifttt:
   key: !secret ifttt_key
