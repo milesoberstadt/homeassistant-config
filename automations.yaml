@@ -56,3 +56,13 @@
   - data:
       event: ac_water_full
     service: ifttt.trigger
+- id: '1529346024931'
+  alias: Set Theme
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: PmxMononight
+    service: frontend.set_theme
