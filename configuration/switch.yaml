@@ -1,0 +1,10 @@
+  - platform: mqtt
+    name: "Downstairs Bathroom Heater"
+    icon: "mdi:radiator"
+    command_topic: "home/basement/sonoff_heater/set"
+    state_topic: "home/basement/sonoff_heater"
+    retain: true
+    payload_open: "ON"
+    payload_close: "OFF"
+    state_on: "ON"
+    state_off: "OFF"

@@ -5,6 +5,7 @@ default_view:
         - group.kitchen
         - group.bedroom
         - group.garage
+        - group.basement
         - group.sensors
 
 Info:
@@ -41,3 +42,6 @@ Garage:
 
 Sensors:
   - binary_sensor.basement_water_sensor
+
+Basement:
+  - switch.downstairs_bathroom_heater
