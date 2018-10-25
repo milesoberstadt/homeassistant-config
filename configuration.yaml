@@ -54,23 +54,7 @@ recorder:
 # Track the sun
 sun:
 
-sensor:
-  - platform: yr
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    monitored_conditions:
-      - summary
-      - icon
-    update_inverval:
-      minutes: 30
-  - platform: mqtt
-    name: "Kitchen Motion Sensor"
-    state_topic: "home/kitchen/motion-sensor"
+sensor: !include ./configuration/sensor.yaml
 
 # Text to speech
 tts:
@@ -92,9 +76,10 @@ device_tracker:
 
 # Enable built in mqtt broker
 mqtt:
-    port: 1883
+    broker: core-mosquitto
     username: !secret mqtt_user
     password: !secret mqtt_pass
+#    discovery: true
 
 # Garage config
 cover: !include ./configuration/cover.yaml
