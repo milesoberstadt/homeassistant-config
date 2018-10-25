@@ -64,7 +64,7 @@
   condition: []
   action:
   - data:
-      name: PmxMononight
+      name: dark_theme
     service: frontend.set_theme
 - id: letsencrypt-renewal
   alias: Let's Encrypt Renewal
