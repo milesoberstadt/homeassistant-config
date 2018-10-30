@@ -42,20 +42,6 @@
     to: 'false'
     for:
       minutes: 10
-- id: '1526831761649'
-  alias: Notify IFTTT - AC Water Full
-  trigger:
-  - entity_id: binary_sensor.basement_water_sensor
-    for:
-      minutes: 2
-    from: 'Off'
-    platform: state
-    to: 'On'
-  condition: []
-  action:
-  - data:
-      event: ac_water_full
-    service: ifttt.trigger
 - id: '1529346024931'
   alias: Set Theme
   trigger:
@@ -93,4 +79,14 @@
   action:
   - service: switch.turn_off
     entity_id: switch.downstairs_bathroom_heater
-
+- id: '1540918848186'
+  alias: Notify on HA Update
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+  condition: []
+  action:
+  - data:
+      event: ha_notify
+      value1: 'Home Assistant {{ states.updater.updater.state }} is now available. '
+    service: ifttt.trigger
