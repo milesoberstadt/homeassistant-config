@@ -14,6 +14,5 @@
     name: "Kitchen LED Strip"
     command_topic: "home/kitchen/counter-led-strip/set"
     state_topic: "home/kitchen/counter-led-strip"
-    state_value_template: "{{ value_json.state }}"
     payload_on: "ON"
     payload_off: "OFF"
