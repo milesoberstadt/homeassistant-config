@@ -45,3 +45,5 @@ Sensors:
 
 Basement:
   - switch.downstairs_bathroom_heater
+  - sensor.bathroom_temperature
+  - sensor.bathroom_humidity
