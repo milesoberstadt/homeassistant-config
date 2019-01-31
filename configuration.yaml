@@ -49,7 +49,6 @@ history:
 # View all events in a logbook
 #logbook:
 recorder:
-  purge_keep_days: 3
 
 # Track the sun
 sun:
@@ -73,13 +72,6 @@ device_tracker:
     host: !secret router_host
     username: !secret router_user
     password: !secret router_pass
-
-# Enable built in mqtt broker
-mqtt:
-    broker: core-mosquitto
-    username: !secret mqtt_user
-    password: !secret mqtt_pass
-#    discovery: true
 
 # Garage config
 cover: !include ./configuration/cover.yaml
