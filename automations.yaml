@@ -90,3 +90,29 @@
       event: ha_notify
       value1: 'Home Assistant {{ states.updater.updater.state }} is now available. '
     service: ifttt.trigger
+- id: '1546789835044'
+  alias: Notify if Left Garage Door Open > 1hr
+  trigger:
+  - entity_id: cover.left_garage_door
+    for: '1:00:00'
+    platform: state
+    to: open
+  condition: []
+  action:
+  - data:
+      event: ha_notify
+      value1: The left garage door has been open for an hour
+    service: ifttt.trigger
+- id: '1546789895121'
+  alias: Notify if Right Garage Door Open > 1hr
+  trigger:
+  - entity_id: cover.right_garage_door
+    for: '1:00:00'
+    platform: state
+    to: open
+  condition: []
+  action:
+  - data:
+      event: ha_notify
+      value1: The right garage door has been open for an hour
+    service: ifttt.trigger
