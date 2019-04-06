@@ -55,6 +55,30 @@ sun:
 
 sensor: !include ./configuration/sensor.yaml
 
+# Use the mosquito mqtt broker
+mqtt:
+  broker: 192.168.42.5
+  discovery: true
+  discovery_prefix: homeassistant
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  api_key: !secret google_assistant_api_key
+  exposed_domains:
+    - switch
+    - light
+    - group
+  entity_config:
+    switch.living_room_display_case:
+      name: Moon Lights
+      expose: true
+      room: Living Room
+
+tradfri:
+  host: 192.168.42.20
+
 # Text to speech
 tts:
   - platform: google
