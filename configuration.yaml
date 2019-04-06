@@ -67,11 +67,7 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 # Track devices!
-device_tracker:
-  - platform: ddwrt
-    host: !secret router_host
-    username: !secret router_user
-    password: !secret router_pass
+device_tracker: !include configuration/device_tracker.yaml
 
 # Garage config
 cover: !include ./configuration/cover.yaml
