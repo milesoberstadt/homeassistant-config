@@ -3,10 +3,9 @@ default_view:
     entities:
         - group.family
         - group.kitchen
-        - group.bedroom
+        - group.livingroom
         - group.garage
         - group.basement
-        - group.sensors
 
 Info:
     view: yes
@@ -16,8 +15,8 @@ Info:
         - group.speedtest
 
 Family:
-    - device_tracker.miles_phone
-    - device_tracker.ginnys_phone
+    - device_tracker.milespixel
+    - device_tracker.ginnyotosiphone
 
 Weather:
   - sun.sun
@@ -33,15 +32,16 @@ Kitchen:
   - light.kitchen_led_strip
   - sensor.kitchen_motion_sensor
 
+LivingRoom:
+  - switch.living_room_display_case
+  - light.living_room_lamp
+
 Bedroom:
   - light.bedroom_led_strip
 
 Garage:
   - cover.left_garage_door
   - cover.right_garage_door
-
-Sensors:
-  - binary_sensor.basement_water_sensor
 
 Basement:
   - switch.downstairs_bathroom_heater
