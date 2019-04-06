@@ -8,3 +8,7 @@
     payload_close: "OFF"
     state_on: "ON"
     state_off: "OFF"
+
+  - platform: wake_on_lan
+    name: "Desktop"
+    mac_address: "40-8D-5C-C4-A1-0D"
