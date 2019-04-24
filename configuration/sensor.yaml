@@ -1,16 +1,9 @@
   - platform: yr
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
   - platform: darksky
     api_key: !secret darksky_api_key
     monitored_conditions:
       - summary
       - icon
-    update_inverval:
-      minutes: 30
   - platform: mqtt
     name: "Kitchen Motion Sensor"
     state_topic: "home/kitchen/motion-sensor"

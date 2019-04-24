@@ -79,6 +79,8 @@ google_assistant:
 tradfri:
   host: 192.168.42.20
 
+speedtestdotnet:
+
 # Text to speech
 tts:
   - platform: google
