@@ -5,7 +5,7 @@ default_view:
         - group.kitchen
         - group.livingroom
         - group.garage
-        - group.basement
+        - group.bathroom
 
 Info:
     view: yes
@@ -43,7 +43,8 @@ Garage:
   - cover.left_garage_door
   - cover.right_garage_door
 
-Basement:
+Bathroom:
   - switch.downstairs_bathroom_heater
   - sensor.bathroom_temperature
   - sensor.bathroom_humidity
+  - light.bathroom_lights

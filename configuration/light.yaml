@@ -16,3 +16,11 @@
     state_topic: "home/kitchen/counter-led-strip"
     payload_on: "ON"
     payload_off: "OFF"
+
+  - platform: group
+    name: Bathroom Lights
+    entities:
+      - light.bathroom_bulb_1
+      - light.bathroom_bulb_2
+      - light.bathroom_bulb_3
+      - light.bathroom_bulb_4
