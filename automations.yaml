@@ -134,20 +134,24 @@
   - entity_id: binary_sensor.bathroom_motion
     for: 00:30
     platform: state
-    to: "off"
+    to: 'off'
   condition: []
   action:
   - service: light.turn_off
     entity_id: light.bathroom_lights
 - id: '1556998896002'
   alias: Turn on bathroom light with motion
-  initial_state: 'true'
   trigger:
   - entity_id: binary_sensor.bathroom_motion
     platform: state
-    to: "on"
-  condition: []
-  action:
-  - service: light.turn_on
+    to: 'on'
+  condition:
+  - condition: state
     entity_id: light.bathroom_lights
-
+    state: 'off'
+  action:
+  - data:
+      brightness: 130
+      entity_id: light.bathroom_lights
+    service: light.turn_on
+  initial_state: 'true'
