@@ -150,8 +150,15 @@
     entity_id: light.bathroom_lights
     state: 'off'
   action:
-  - data:
-      brightness: 130
-      entity_id: light.bathroom_lights
+    data_template:
+      brightness: >
+        {% if now().hour < 10 %}
+          25
+        {% elif now().hour < 20 %}
+          220
+        {% else %}
+          25
+        {% endif %}
+    entity_id: light.bathroom_lights
     service: light.turn_on
   initial_state: 'true'
