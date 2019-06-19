@@ -29,8 +29,8 @@ Speedtest:
   - sensor.speedtest_ping
 
 Kitchen:
-  - light.kitchen_led_strip
-  - sensor.kitchen_motion_sensor
+  - switch.kitchen_led_strip
+  - binary_sensor.kitchen_motion
 
 LivingRoom:
   - switch.living_room_display_case
