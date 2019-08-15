@@ -1,24 +1,24 @@
-- project_id: !secret google_assistant_project_id
-  api_key: !secret google_assistant_api_key
-  exposed_domains:
-    - switch
-    - light
-    - group
-    - cover
-  entity_config:
-    switch.living_room_display_case:
-      name: Moon Lights
-      expose: true
-      room: Living Room
-    light.living_room_lamp:
-      name: Living Room Lamp
-      expose: true
-      room: Living Room
-    cover.left_garage_door:
-      name: Left Garage Door
-      expose: true
-      room: Garage
-    cover.right_garage_door:
-      name: Right Garage Door
-      expose: true
-      room: Garage
+project_id: !secret google_assistant_project_id
+api_key: !secret google_assistant_api_key
+exposed_domains:
+  - switch
+  - light
+  - group
+  - cover
+entity_config:
+  switch.living_room_display_case:
+    name: Moon Lights
+    expose: true
+    room: Living Room
+  light.living_room_lamp:
+    name: Living Room Lamp
+    expose: true
+    room: Living Room
+  cover.left_garage_door:
+    name: Left Garage Door
+    expose: true
+    room: Garage
+  cover.right_garage_door:
+    name: Right Garage Door
+    expose: true
+    room: Garage
