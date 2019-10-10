@@ -15,8 +15,8 @@ Info:
         - group.speedtest
 
 Family:
-    - device_tracker.milespixel
-    - device_tracker.ginnyotosiphone
+    - device_tracker.miles_pixel_xl
+    - device_tracker.ginny_iphone
 
 Weather:
   - sun.sun
@@ -44,7 +44,7 @@ Garage:
   - cover.right_garage_door
 
 Bathroom:
-  - switch.downstairs_bathroom_heater
+  - switch.sonoff
   - sensor.bathroom_temperature
   - sensor.bathroom_humidity
   - light.bathroom_lights
