@@ -44,7 +44,7 @@ Garage:
   - cover.right_garage_door
 
 Bathroom:
-  - switch.sonoff
+  - switch.bathroom_heater
   - sensor.bathroom_temperature
   - sensor.bathroom_humidity
   - light.bathroom_lights
