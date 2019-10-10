@@ -68,25 +68,36 @@
     data:
       addon: core_letsencrypt
 - id: '1538364923368'
-  alias: Turn on heater in the morning
-  initial_state: 'true'
+  alias: Turn on bathroom heater
   trigger:
-  - at: 07:00:00
-    platform: time
-  condition: []
+  - below: '72'
+    entity_id: sensor.bathroom_temperature
+    platform: numeric_state
+  condition:
+  - after: '06:00:00'
+    before: '10:00:00'
+    condition: time
+  - condition: state
+    entity_id: switch.bathroom_heater
+    state: 'off'
   action:
-  - service: switch.turn_on
-    entity_id: switch.downstairs_bathroom_heater
+  - entity_id: switch.bathroom_heater
+    service: switch.turn_on
+  initial_state: 'true'
 - id: '1538365811855'
-  alias: Turn off the heater in the morning
-  initial_state: 'true'
+  alias: Turn off bathroom heater when too hot
   trigger:
-  - at: 08:00:00
-    platform: time
-  condition: []
+  - above: '73'
+    entity_id: sensor.bathroom_temperature
+    platform: numeric_state
+  condition:
+  - condition: state
+    entity_id: switch.bathroom_heater
+    state: 'on'
   action:
-  - service: switch.turn_off
-    entity_id: switch.downstairs_bathroom_heater
+  - entity_id: switch.bathroom_heater
+    service: switch.turn_off
+  initial_state: 'true'
 - id: '1540918848186'
   alias: Notify on HA Update
   initial_state: 'true'
