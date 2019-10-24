@@ -1,5 +1,0 @@
-  - platform: unifi
-    host: !secret router_host
-    username: !secret router_user
-    password: !secret router_pass
-    verify_ssl: false

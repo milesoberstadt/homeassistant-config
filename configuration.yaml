@@ -81,9 +81,6 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
-# Track devices!
-device_tracker: !include configuration/device_tracker.yaml
-
 # Garage config
 cover: !include ./configuration/cover.yaml
 
