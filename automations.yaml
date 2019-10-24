@@ -70,7 +70,7 @@
 - id: '1538364923368'
   alias: Turn on bathroom heater
   trigger:
-  - below: '72'
+  - below: '71'
     entity_id: sensor.bathroom_temperature
     platform: numeric_state
   condition:
@@ -87,7 +87,7 @@
 - id: '1538365811855'
   alias: Turn off bathroom heater when too hot
   trigger:
-  - above: '73'
+  - above: '72'
     entity_id: sensor.bathroom_temperature
     platform: numeric_state
   condition:
