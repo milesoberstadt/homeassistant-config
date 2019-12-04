@@ -33,6 +33,9 @@ Kitchen:
   - binary_sensor.kitchen_motion
 
 LivingRoom:
+  - climate.living_room
+  - sensor.living_room_humidity
+  - sensor.living_room_temperature
   - switch.living_room_display_case
   - light.living_room_lamp
 
