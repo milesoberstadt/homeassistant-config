@@ -1,0 +1,35 @@
+- id: '1529346024931'
+  alias: Set Theme
+  initial_state: 'true'
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      name: dark_theme
+    service: frontend.set_theme
+
+- id: letsencrypt-renewal
+  alias: Let's Encrypt Renewal
+  initial_state: 'true'
+  trigger:
+  - platform: time
+    at: 00:00:00
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_letsencrypt
+
+- id: '1540918848186'
+  alias: Notify on HA Update
+  initial_state: 'true'
+  trigger:
+  - entity_id: updater.updater
+    platform: state
+  condition: []
+  action:
+  - data:
+      event: ha_notify
+      value1: 'Home Assistant {{ states.updater.updater.state }} is now available. '
+    service: ifttt.trigger
