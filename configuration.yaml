@@ -15,6 +15,7 @@ homeassistant:
   auth_providers:
    - type: legacy_api_password
      api_password: !secret http_password
+   - type: homeassistant
 
 # Show links to resources in log and frontend
 #introduction:
@@ -30,14 +31,14 @@ http:
   base_url: !secret http_base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-  ip_ban_enabled: True
-  login_attempts_threshold: 5
 
 # Checks for available updates
 updater:
   include_used_components: true
 
 mobile_app:
+
+auth:
 
 # Discover some devices automatically
 discovery:
