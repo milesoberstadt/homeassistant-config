@@ -33,3 +33,16 @@
       event: ha_notify
       value1: 'Home Assistant {{ states.updater.updater.state }} is now available. '
     service: ifttt.trigger
+
+- id: ifttt_handler
+  alias: Handle IFTTT events
+  trigger:
+    - event_data:
+        action: call_service
+      event_type: ifttt_webhook_received
+      platform: event
+  condition: []
+  action:
+    - data_template:
+        entity_id: '{{ trigger.event.data.entity_id }}'
+      service_template: '{{ trigger.event.data.service }}'
