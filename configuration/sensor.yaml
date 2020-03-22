@@ -19,3 +19,9 @@
     state_topic: "home/bathroom/temperature"
     unit_of_measurement: '%'
     value_template: "{{ value_json.humidity }}"
+
+  - platform: mqtt
+    name: "Hairdryer Power"
+    state_topic: "bathroom_hairdryer/tele/SENSOR"
+    value_template: '{{ value_json["ENERGY"]["Power"] }}'
+    unit_of_measurement: "W"

@@ -37,6 +37,17 @@
     service: switch.turn_off
   initial_state: 'true'
 
+- id: '1584854483420'
+  alias: Turn off bathroom heater when hairdryer is on
+  trigger:
+  - above: '0'
+    entity_id: sensor.hairdryer_power_2
+    platform: numeric_state
+  action:
+  - entity_id: switch.bathroom_heater
+    service: switch.turn_off
+  initial_state: 'true'
+
 - id: '1556995574054'
   alias: Turn off bathroom light if Clear for 30 min
   initial_state: 'true'
