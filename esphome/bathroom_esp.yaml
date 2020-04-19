@@ -1,0 +1,41 @@
+esphomeyaml:
+  name: bathroom_esp
+  platform: ESP8266
+  board: d1_mini_pro
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+  baud_rate: 0
+# Enable Home Assistant API
+#api:
+#  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+sensor:
+  - platform: dht
+    pin: D1
+    model: AM2302
+    temperature:
+      name: "Bathroom Temperature"
+    humidity:
+      name: "Bathroom Humidity"
+    update_interval: 60s
+
+binary_sensor:
+  - platform: gpio
+    pin: 
+      number: D0
+      mode: INPUT_PULLUP
+    name: "Bathroom Motion"
+    device_class: motion

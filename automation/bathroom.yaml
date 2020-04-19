@@ -40,7 +40,7 @@
 - id: '1584854483420'
   alias: Turn off bathroom heater when hairdryer is on
   trigger:
-  - above: '0'
+  - above: '1000'
     entity_id: sensor.hairdryer_power_2
     platform: numeric_state
   action:

@@ -1,0 +1,29 @@
+esphomeyaml:
+  name: basement_closet
+  platform: ESP8266
+  board: d1_mini_pro
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+#api:
+#  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+binary_sensor:
+  - platform: gpio
+    pin: D4
+    name: "Basement Closet Motion"
+    device_class: motion
