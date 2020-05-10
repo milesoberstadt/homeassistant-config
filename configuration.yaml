@@ -95,6 +95,10 @@ light: !include ./configuration/light.yaml
 
 switch: !include ./configuration/switch.yaml
 
+camera: !include ./configuration/camera.yaml
+
+stream:
+
 ifttt:
   key: !secret ifttt_key
 

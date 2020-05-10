@@ -1,0 +1,3 @@
+- platform: ffmpeg
+  name: Garage Stream
+  input: !secret garage_camera_uri
