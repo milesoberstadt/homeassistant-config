@@ -1,0 +1,36 @@
+- alias: Work Start
+  trigger:
+    - platform: time
+      at: '09:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - brightness_pct: 25
+      device_id: 7c355eebf08843fea2f1500db82e2cd4
+      domain: light
+      entity_id: light.desk_lights
+      type: turn_on
+
+- alias: Work End
+  trigger:
+    - platform: time
+      at: '17:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - device_id: 7c355eebf08843fea2f1500db82e2cd4
+      domain: light
+      entity_id: light.desk_lights
+      type: turn_off
