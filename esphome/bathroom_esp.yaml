@@ -11,7 +11,7 @@ wifi:
 logger:
   baud_rate: 0
 # Enable Home Assistant API
-#api:
+api:
 #  password: !secret api_password
 
 ota:
