@@ -102,6 +102,10 @@ stream:
 ifttt:
   key: !secret ifttt_key
 
+octoprint:
+  host: !secret octoprint_ip
+  api_key: !secret octoprint_api_key
+
 python_script:
 
 system_health:
