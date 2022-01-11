@@ -28,7 +28,6 @@ frontend:
 config:
 
 http:
-  base_url: !secret http_base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
 
@@ -107,3 +106,8 @@ python_script:
 system_health:
 
 api:
+
+shell_command:
+  dim_desktop: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/dimDesktop.sh"
+  toggle_mic: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/muteHangouts.sh"
+  toggle_camera: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/toggleCameraHangouts.sh"

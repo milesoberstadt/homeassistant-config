@@ -1,4 +1,5 @@
-- alias: Work Start
+- id: work_start
+  alias: Work Start
   trigger:
     - platform: time
       at: '09:00:00'
@@ -19,7 +20,8 @@
     - service: switch.turn_on
       entity_id: switch.desktop
 
-- alias: Work End
+- id: work_end
+  alias: Work End
   trigger:
     - platform: time
       at: '17:00:00'
@@ -36,3 +38,27 @@
       domain: light
       entity_id: light.desk_lights
       type: turn_off
+
+- id: dim_desktop
+  alias: Dim Desktop
+  trigger:
+    platform: state
+    entity_id: button.dim_desktop
+  action:
+    service: shell_command.dim_desktop
+
+- id: toggle_mic
+  alias: Toggle Desktop Mic
+  trigger:
+    platform: state
+    entity_id: button.toggle_mic
+  action:
+    service: shell_command.toggle_mic
+
+- id: toggle_vid
+  alias: Toggle Desktop Webcam
+  trigger:
+    platform: state
+    entity_id: button.toggle_vid
+  action:
+    service: shell_command.toggle_camera
