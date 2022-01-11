@@ -6,7 +6,3 @@
     retain: true
     state_on: "ON"
     state_off: "OFF"
-
-  - platform: wake_on_lan
-    name: "Desktop"
-    mac: "24-4b-fe-4b-49-77"

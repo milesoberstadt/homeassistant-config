@@ -1,15 +1,3 @@
-- id: '1529346024931'
-  alias: Set Theme
-  initial_state: 'true'
-  trigger:
-  - event: start
-    platform: homeassistant
-  condition: []
-  action:
-  - data:
-      name: dark_theme
-    service: frontend.set_theme
-
 - id: letsencrypt-renewal
   alias: Let's Encrypt Renewal
   initial_state: 'true'

@@ -1,0 +1,24 @@
+  - platform: wake_on_lan
+    name: "Desktop"
+    mac: "24-4b-fe-4b-49-77"
+
+  - id: dim_desktop
+    name: Dim Desktop
+    platform: command_line
+    switches:
+      dim_desktop:
+        command_on: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/dimDesktop.sh"
+
+  - id: toggle_mic
+    name: Toggle Desktop Mic
+    platform: command_line
+    switches:
+      dim_desktop:
+        command_on: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/muteHangouts.sh"
+
+  - id: toggle_vid
+    name: Toggle Desktop Video
+    platform: command_line
+    switches:
+      dim_desktop:
+        command_on: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/toggleCameraHangouts.sh"

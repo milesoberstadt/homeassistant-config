@@ -45,3 +45,9 @@ bathroom:
     - sensor.bathroom_humidity
     - light.bathroom_lights
     - binary_sensor.bathroom_motion
+
+office:
+  name: Office
+  entities:
+    - light.wled
+    - light.desk_light
