@@ -1,8 +1,0 @@
-  - id: dim_desktop
-    name: Dim Desktop
-
-  - id: toggle_mic
-    name: Toggle Desktop Mic
-
-  - id: toggle_vid
-    name: Toggle Desktop Video

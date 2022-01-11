@@ -88,7 +88,6 @@ script: !include scripts.yaml
 
 cover: !include ./configuration/cover.yaml
 switch: !include ./configuration/switch.yaml
-button: !include ./configuration/button.yaml
 light: !include ./configuration/light.yaml
 camera: !include ./configuration/camera.yaml
 

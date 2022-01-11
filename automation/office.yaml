@@ -46,19 +46,3 @@
     entity_id: button.dim_desktop
   action:
     service: shell_command.dim_desktop
-
-- id: toggle_mic
-  alias: Toggle Desktop Mic
-  trigger:
-    platform: state
-    entity_id: button.toggle_mic
-  action:
-    service: shell_command.toggle_mic
-
-- id: toggle_vid
-  alias: Toggle Desktop Webcam
-  trigger:
-    platform: state
-    entity_id: button.toggle_vid
-  action:
-    service: shell_command.toggle_camera
