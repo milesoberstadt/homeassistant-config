@@ -79,3 +79,13 @@ binary_sensor:
               Content-Type: application/json
               X-Api-Key: !secret printer_api_key
             body: '{"commands": ["M104 S200", "M140 S60"]}'
+
+  - platform: gpio
+    pin:
+      number: D5
+      mode: INPUT_PULLUP
+    name: "Button 5"
+    on_press:
+      then:
+        - homeassistant.service:
+            service: shell_command.dim_desktop

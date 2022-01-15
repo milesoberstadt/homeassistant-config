@@ -107,6 +107,6 @@ system_health:
 api:
 
 shell_command:
-  dim_desktop: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/dimDesktop.sh"
-  toggle_mic: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/muteHangouts.sh"
-  toggle_camera: "ssh -i /config/ssh_keys/desktop_key -o StrictHostKeyChecking=no miles@192.168.42.10 /home/miles/dotfiles/scripts/ubuntu-desktop/toggleCameraHangouts.sh"
+  dim_desktop: !secret dim_desktop_command
+  toggle_mic: !secret toggle_mic_command
+  toggle_camera: !secret toggle_camera_command
