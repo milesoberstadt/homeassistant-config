@@ -52,18 +52,12 @@ binary_sensor:
     name: "Button 2"
     on_press:
       then:
-        - homeassistant.event:
-            event: esphome.desk_macros
-            data:
-              button: '2'
-              presses: '1'
+        - homeassistant.service:
+            service: shell_command.toggle_mic
     on_double_click:
       then:
-        - homeassistant.event:
-            event: esphome.desk_macros
-            data:
-              button: '2'
-              presses: '2'
+        - homeassistant.service:
+            service: shell_command.toggle_camera
   - platform: gpio
     pin:
       number: D3
