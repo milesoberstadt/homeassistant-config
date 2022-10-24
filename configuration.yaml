@@ -66,6 +66,7 @@ mqtt:
   discovery_prefix: homeassistant
   username: !secret mqtt_user
   password: !secret mqtt_pass
+  sensor: !include ./configuration/sensor_mqtt.yaml
 
 google_assistant: !include ./configuration/google_assistant.yaml
 
