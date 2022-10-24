@@ -1,22 +1,3 @@
-  - platform: mqtt
-    name: "Bedroom LED Strip"
-    command_topic: "home/bedroom/led-strip/set"
-    state_topic: "home/bedroom/led-strip"
-    brightness_state_topic: "home/bedroom/led-strip/brightness"
-    brightness_command_topic: "home/bedroom/led-strip/brightness/set"
-    rgb_state_topic: "home/bedroom/led-strip/rgb"
-    rgb_command_topic: "home/bedroom/led-strip/rgb/set"
-    state_value_template: "{{ value_json.state }}"
-    payload_on: "ON"
-    payload_off: "OFF"
-
-  - platform: mqtt
-    name: "Kitchen LED Strip"
-    command_topic: "home/kitchen/counter-led-strip/set"
-    state_topic: "home/kitchen/counter-led-strip"
-    payload_on: "ON"
-    payload_off: "OFF"
-
   - platform: group
     name: Bathroom Lights
     entities:

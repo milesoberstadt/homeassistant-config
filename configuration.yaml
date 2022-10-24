@@ -65,6 +65,8 @@ mqtt:
   password: !secret mqtt_pass
   sensor: !include ./configuration/sensor_mqtt.yaml
   switch: !include ./configuration/switch_mqtt.yaml
+  switch: !include ./configuration/cover_mqtt.yaml
+  switch: !include ./configuration/light_mqtt.yaml
 
 google_assistant: !include ./configuration/google_assistant.yaml
 
@@ -84,7 +86,6 @@ group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 
-cover: !include ./configuration/cover.yaml
 switch: !include ./configuration/switch.yaml
 light: !include ./configuration/light.yaml
 camera: !include ./configuration/camera.yaml
