@@ -1,0 +1,12 @@
+  - platform: mqtt
+    name: "Downstairs Bathroom Heater"
+    icon: "mdi:radiator"
+    command_topic: "home/basement/sonoff_heater/set"
+    state_topic: "home/basement/sonoff_heater"
+    retain: true
+    state_on: "ON"
+    state_off: "OFF"
+
+  - platform: wake_on_lan
+    name: "Desktop"
+    mac: "24-4b-fe-4b-49-77"
