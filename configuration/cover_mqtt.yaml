@@ -1,5 +1,4 @@
-  - platform: mqtt
-    name: "Right Garage Door"
+  - name: "Right Garage Door"
     device_class: garage
     command_topic: "home/garage/door-right/set"
     state_topic: "home/garage/door-right"
@@ -10,8 +9,7 @@
     state_open: "open"
     state_closed: "closed"
 
-  - platform: mqtt
-    name: "Left Garage Door"
+  - name: "Left Garage Door"
     device_class: garage
     command_topic: "home/garage/door-left/set"
     state_topic: "home/garage/door-left"
