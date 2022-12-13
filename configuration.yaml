@@ -58,11 +58,6 @@ sensor: !include ./configuration/sensor.yaml
 
 # Use the mosquito mqtt broker
 mqtt:
-  broker: !secret mqtt_ip
-  discovery: true
-  discovery_prefix: homeassistant
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
   sensor: !include ./configuration/sensor_mqtt.yaml
   switch: !include ./configuration/switch_mqtt.yaml
   switch: !include ./configuration/cover_mqtt.yaml
