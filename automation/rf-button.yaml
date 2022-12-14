@@ -1,4 +1,4 @@
-- id: rf_two_button_press
+- id: 'rf_two_button_press'
   alias: RF Two Button Press
   trigger:
     - platform: mqtt
