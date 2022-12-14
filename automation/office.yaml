@@ -13,9 +13,11 @@
         - fri
   action:
     - service: light.turn_on
-      entity_id: light.desk_lights
-      brightness: 25
-      rgb_color: [247, 255, 223]
+      target:
+        entity_id: light.desk_lights
+      data:
+        brightness: 25
+        rgb_color: [247, 255, 223]
     - service: switch.turn_on
       entity_id: switch.desktop
 
