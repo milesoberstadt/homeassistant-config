@@ -1,0 +1,10 @@
+- id: rf_two_button_press
+  alias: RF Two Button Press
+  trigger:
+    - platform: mqtt
+      topic: tele/tasmota_rf/RESULT
+  condition: "{{ value_json.payload['RfReceived.Data'] in(['5E6781', '5E6782']) }}"
+  action:
+    - service: notify.mobile_app_pixel_4_xl
+      data:
+        message: Button Pressed!
