@@ -5,6 +5,11 @@
       topic: tele/tasmota_rf/RESULT
   condition: "{{ trigger.payload_json.RfReceived.Data in(['5E6781', '5E6782']) }}"
   action:
-    - service: notify.mobile_app_pixel_4_xl
+    - service: light.turn_on
+      entity_id: light.desk_lights
       data:
-        message: Button Pressed!
+        rgb_color: [255, 0, 0]
+    - service: script.flash_light
+      data:
+        light: desk_lights
+        count: 5

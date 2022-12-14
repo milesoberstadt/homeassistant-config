@@ -8,7 +8,9 @@ flash_light:
       repeat:
         count: "{{ count|int * 2 - 1 }}"
         sequence:
-          - delay: 2
+          - delay: '0.5' 
           - service: light.toggle
             target:
               entity_id: "light.{{ light }}"
+            data:
+              transition: 0
