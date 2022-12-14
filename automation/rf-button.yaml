@@ -8,6 +8,7 @@
     - service: light.turn_on
       entity_id: light.desk_lights
       data:
+        brightness: 255
         rgb_color: [255, 0, 0]
     - service: script.flash_light
       data:
