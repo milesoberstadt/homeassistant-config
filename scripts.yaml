@@ -1,0 +1,14 @@
+flash_light:
+  mode: restart
+  sequence:
+    - service: light.turn_on
+      target:
+        entity_id: "light.{{ light }}"
+    - alias: "Cycle light 'count' times"
+      repeat:
+        count: "{{ count|int * 2 - 1 }}"
+        sequence:
+          - delay: 2
+          - service: light.toggle
+            target:
+              entity_id: "light.{{ light }}"
