@@ -3,7 +3,7 @@
   trigger:
     - platform: mqtt
       topic: tele/tasmota_rf/RESULT
-  condition: "{{ value_json.payload['RfReceived.Data'] in(['5E6781', '5E6782']) }}"
+  condition: "{{ trigger.payload_json.RfReceived.Data in(['5E6781', '5E6782']) }}"
   action:
     - service: notify.mobile_app_pixel_4_xl
       data:
