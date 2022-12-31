@@ -14,3 +14,13 @@ flash_light:
               entity_id: "light.{{ light }}"
             data:
               transition: 0
+
+esphome_light_toggle:
+  sequence:
+    - service: light.toggle
+      data_template:
+        entity_id: '{{ entity_id }}'
+        rgb_color:
+          - '{{ red }}'
+          - '{{ green }}'
+          - '{{ blue }}'
