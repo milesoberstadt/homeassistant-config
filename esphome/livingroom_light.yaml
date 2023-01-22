@@ -25,4 +25,5 @@ mqtt:
 switch:
   - platform: gpio
     name: "Living Room Display Case"
+    restore_mode: ALWAYS_ON
     pin: 4
