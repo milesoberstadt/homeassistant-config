@@ -64,7 +64,8 @@ mqtt:
   switch: !include ./configuration/cover_mqtt.yaml
   switch: !include ./configuration/light_mqtt.yaml
 
-google_assistant: !include ./configuration/google_assistant.yaml
+# FIXME: We have to reconfigure this :(
+#google_assistant: !include ./configuration/google_assistant.yaml
 
 tradfri:
   host: !secret tradfri_ip
