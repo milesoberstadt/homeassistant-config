@@ -1,59 +1,18 @@
-homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Home
-  # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 274
-  country: US
-  # metric for Metric, imperial for Imperial
-  unit_system: imperial
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: America/Chicago
-  # Customization file
-  customize: !include customize.yaml
-  auth_providers:
-   - type: legacy_api_password
-     api_password: !secret http_password
-   - type: homeassistant
-
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables the frontend
-frontend: 
-
-# Enables configuration UI
-config:
+# This is a load bearing setting
+default_config:
 
 http:
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
-
-mobile_app:
-
-auth:
 
 # Discover some devices automatically
 discovery:
   ignore:
     - google_cast
 
-# Allows you to issue voice commands from the frontend in enabled browsers
-conversation:
-
-# Enables support for tracking state changes over time.
-history:
-
 device_tracker:
 
-# View all events in a logbook
-#logbook:
 recorder:
-
-# Track the sun
-sun:
 
 sensor: !include ./configuration/sensor.yaml
 
@@ -67,17 +26,13 @@ mqtt:
 # FIXME: We have to reconfigure this :(
 #google_assistant: !include ./configuration/google_assistant.yaml
 
-tradfri:
-  host: !secret tradfri_ip
-
-speedtestdotnet:
+# ikea smarthome stuff, enable when in use
+#tradfri:
+#  host: !secret tradfri_ip
 
 # Text to speech
 tts:
   - platform: google_translate
-
-# Cloud
-cloud:
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
@@ -87,8 +42,6 @@ switch: !include ./configuration/switch.yaml
 light: !include ./configuration/light.yaml
 camera: !include ./configuration/camera.yaml
 
-stream:
-
 ifttt:
   key: !secret ifttt_key
 
@@ -97,8 +50,6 @@ octoprint:
   api_key: !secret octoprint_api_key
 
 python_script:
-
-system_health:
 
 api:
 
