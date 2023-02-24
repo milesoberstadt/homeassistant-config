@@ -20,15 +20,11 @@ logger:
 
 # Enable Home Assistant API
 api:
-  password: !secret api_password
+  encryption:
+    key: !secret api_key
 
 ota:
   password: !secret generated_ota_password
-
-mqtt:
-  broker: !secret mqtt_broker
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
 
 http_request:
   useragent: esphome/device
