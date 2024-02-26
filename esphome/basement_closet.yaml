@@ -22,18 +22,8 @@ mqtt:
   username: !secret mqtt_user
   password: !secret mqtt_pass
 
-sensor:
-  - platform: dht
+binary_sensor:
+  - platform: gpio
     pin: D4
-    model: AM2302
-    temperature:
-      name: "Basement Closet Temperature"
-    humidity:
-      name: "Basement Closet Humidity"
-    update_interval: 60s
-
-# binary_sensor:
-#   - platform: gpio
-#     pin: D4
-#     name: "Basement Closet Motion"
-#     device_class: motion
+    name: "Basement Closet Motion"
+    device_class: motion
