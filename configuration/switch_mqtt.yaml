@@ -5,3 +5,9 @@
     retain: true
     state_on: "ON"
     state_off: "OFF"
+
+  - name: "Kitchen LED Strip"
+    command_topic: "home/kitchen/counter-led-strip/set"
+    state_topic: "home/kitchen/counter-led-strip"
+    payload_on: "ON"
+    payload_off: "OFF"

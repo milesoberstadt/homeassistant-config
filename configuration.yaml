@@ -15,8 +15,6 @@ sensor: !include ./configuration/sensor.yaml
 mqtt:
   sensor: !include ./configuration/sensor_mqtt.yaml
   switch: !include ./configuration/switch_mqtt.yaml
-  switch: !include ./configuration/cover_mqtt.yaml
-  switch: !include ./configuration/light_mqtt.yaml
 
 # FIXME: We have to reconfigure this :(
 #google_assistant: !include ./configuration/google_assistant.yaml

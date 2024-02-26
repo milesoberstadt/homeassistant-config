@@ -35,10 +35,10 @@
         - thu
         - fri
   action:
-    - device_id: 7c355eebf08843fea2f1500db82e2cd4
+    - entity_id: light.desk_lights
       domain: light
-      entity_id: light.desk_lights
       type: turn_off
+      #device_id: 7c355eebf08843fea2f1500db82e2cd4
 
 - id: dim_desktop
   alias: Dim Desktop
