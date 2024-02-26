@@ -1,3 +1,0 @@
-- binary_sensor:
-  - id: hackpack.ssid_seen
-    name: "Hackpack SSID"

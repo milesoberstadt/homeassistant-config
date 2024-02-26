@@ -52,5 +52,3 @@ shell_command:
   dim_desktop: !secret dim_desktop_command
   toggle_mic: !secret toggle_mic_command
   toggle_camera: !secret toggle_camera_command
-
-template: !include ./configuration/template.yaml
