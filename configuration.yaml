@@ -14,7 +14,6 @@ sensor: !include ./configuration/sensor.yaml
 # Use the mosquito mqtt broker
 mqtt:
   sensor: !include ./configuration/sensor_mqtt.yaml
-  switch: !include ./configuration/switch_mqtt.yaml
 
 # FIXME: We have to reconfigure this :(
 #google_assistant: !include ./configuration/google_assistant.yaml
