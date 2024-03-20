@@ -20,15 +20,11 @@ logger:
 
 # Enable Home Assistant API
 api:
-  password: !secret api_password
+  encryption:
+    key: !secret api_key
 
 ota:
   password: !secret generated_ota_password
-
-mqtt:
-  broker: !secret mqtt_broker
-  username: !secret mqtt_user
-  password: !secret mqtt_pass
 
 http_request:
   useragent: esphome/device
@@ -42,9 +38,13 @@ binary_sensor:
     name: "Button 1"
     on_press:
       then:
-        - mqtt.publish:
-            topic: wled/desk
-            payload: "T"
+        - homeassistant.service:
+            service: script.esphome_light_toggle
+            data:
+              entity_id: light.desk_lights
+              red: '223'
+              green: '255'
+              blue: '239'
   - platform: gpio
     pin:
       number: D2

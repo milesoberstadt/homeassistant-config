@@ -12,11 +12,12 @@
         - thu
         - fri
   action:
-    - brightness_pct: 25
-      device_id: 7c355eebf08843fea2f1500db82e2cd4
-      domain: light
-      entity_id: light.desk_lights
-      type: turn_on
+    - service: light.turn_on
+      target:
+        entity_id: light.desk_lights
+      data:
+        brightness: 25
+        rgb_color: [247, 255, 223]
     - service: switch.turn_on
       entity_id: switch.desktop
 
@@ -34,10 +35,10 @@
         - thu
         - fri
   action:
-    - device_id: 7c355eebf08843fea2f1500db82e2cd4
+    - entity_id: light.desk_lights
       domain: light
-      entity_id: light.desk_lights
       type: turn_off
+      #device_id: 7c355eebf08843fea2f1500db82e2cd4
 
 - id: dim_desktop
   alias: Dim Desktop

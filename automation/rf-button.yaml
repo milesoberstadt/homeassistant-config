@@ -1,0 +1,16 @@
+- id: 'rf_two_button_press'
+  alias: RF Two Button Press
+  trigger:
+    - platform: mqtt
+      topic: tele/tasmota_rf/RESULT
+  condition: "{{ trigger.payload_json.RfReceived.Data in(['5E6781', '5E6782']) }}"
+  action:
+    - service: light.turn_on
+      entity_id: light.desk_lights
+      data:
+        brightness: 255
+        rgb_color: [255, 0, 0]
+    - service: script.flash_light
+      data:
+        light: desk_lights
+        count: 5
