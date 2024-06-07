@@ -1,0 +1,18 @@
+- alias: Bed Remote - D
+  description: ""
+  trigger:
+    - platform: mqtt
+      topic: tele/tasmota_rf/RESULT
+      payload: "{\"Sync\":12490,\"Low\":420,\"High\":1230,\"Data\":\"7479C1\",\"RfKey\":\"None\"}"
+      value_template: "{{ value_json.RfReceived }}"
+  condition: []
+  action:
+    - service: mqtt.publish
+      metadata: {}
+      data:
+        qos: 0
+        retain: false
+        topic: cmnd/bedroom_ir/IRSend
+        payload: >-
+          {"Protocol":"SHARP","Bits":15,"Data":"0x41A2","DataLSB":"0x8245","Repeat":0}
+

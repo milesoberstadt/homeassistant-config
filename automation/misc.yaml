@@ -9,27 +9,3 @@
     data:
       addon: core_letsencrypt
 
-- id: '1540918848186'
-  alias: Notify on HA Update
-  initial_state: 'true'
-  trigger:
-  - entity_id: updater.updater
-    platform: state
-  condition: []
-  action:
-  - data:
-      event: ha_notify
-      value1: 'Home Assistant {{ states.updater.updater.state }} is now available. '
-    service: ifttt.trigger
-
-- id: ifttt_handler
-  alias: Handle IFTTT events
-  trigger:
-    - platform: event
-      event_type: ifttt_webhook_received
-      event_data:
-        action: 'call_service'
-  action:
-    - service_template: '{{ trigger.event.data.service }}'
-      data_template:
-        entity_id: '{{ trigger.event.data.entity_id }}'
