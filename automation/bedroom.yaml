@@ -3,8 +3,8 @@
   trigger:
     - platform: mqtt
       topic: tele/tasmota_rf/RESULT
-      payload: "{\"Sync\":12490,\"Low\":420,\"High\":1230,\"Data\":\"7479C1\",\"RfKey\":\"None\"}"
-      value_template: "{{ value_json.RfReceived }}"
+      payload: "7479C1"
+      value_template: "{{ value_json.RfReceived.Data }}"
   condition: []
   action:
     - service: mqtt.publish
