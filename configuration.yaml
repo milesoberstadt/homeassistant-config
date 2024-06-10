@@ -27,7 +27,7 @@ tts:
   - platform: google_translate
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automation
+#automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 
 switch: !include ./configuration/switch.yaml
