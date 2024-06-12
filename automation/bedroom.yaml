@@ -16,3 +16,23 @@
         payload: >-
           {"Protocol":"SHARP","Bits":15,"Data":"0x41A2","DataLSB":"0x8245","Repeat":0}
 
+- id: '1718235777369'
+  alias: New automation
+  description: ''
+  trigger:
+  - type: powered
+    platform: device
+    device_id: 0e8cc8a56cc9bc96516e7584209cc336
+    entity_id: 957bb47bf3e44645e61dc59c1b30c581
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: mqtt.publish
+    metadata: {}
+    data:
+      qos: 0
+      retain: false
+      topic: cmnd/bedroom_ir/IRSend
+      payload: '{"Protocol":"SHARP","Bits":15,"Data":"0x41A2","DataLSB":"0x8245","Repeat":0}'
+  mode: single
+
